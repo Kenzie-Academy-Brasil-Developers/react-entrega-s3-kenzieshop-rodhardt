@@ -1,4 +1,9 @@
 import { useState } from "react";
+import { addProductThunk } from "../../store/modules/shop/thunks";
+
+import { useDispatch } from "react-redux";
+
+import "./productList.css";
 
 const ProductList = () => {
   const [products, setProducts] = useState([
@@ -29,15 +34,23 @@ const ProductList = () => {
     },
   ]);
 
+  const dispatch = useDispatch();
+
+  const handleProducts = (notebook) => {
+    dispatch(addProductThunk(notebook));
+  };
+
   return (
-    <div>
+    <div className="shop">
       <ul>
-        {products.map((notebook) => (
+        {products.map((notebook, index) => (
           <li key={notebook.name}>
             <img src={notebook.img} alt={notebook.name} />
-            <h3>Marca: {notebook.name}</h3>
-            <p>Preço: R${notebook.price.toFixed(2)}</p>
-            <button>Add</button>
+            <div className="text-info">
+              <h3>Marca: {notebook.name}</h3>
+              <p>Preço: R${notebook.price.toFixed(2)}</p>
+            </div>
+            <button onClick={() => handleProducts(notebook)}>Adicionar</button>
           </li>
         ))}
       </ul>

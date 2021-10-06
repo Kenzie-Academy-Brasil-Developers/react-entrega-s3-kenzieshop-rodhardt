@@ -1,0 +1,39 @@
+.shop img {
+  width: 175px;
+}
+
+.shop ul {
+  padding: 0;
+  list-style: none;
+}
+
+.shop li {
+  margin-top: 15px;
+}
+
+.shop button {
+  background-color: rgb(13, 128, 13);
+  color: white;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.shop button:hover {
+  cursor: pointer;
+  background-color: rgb(3, 97, 3);
+}
+
+@media screen and (min-width: 500px) {
+  .shop li {
+    display: flex;
+    align-items: center;
+  }
+
+  .shop .text-info {
+    flex-grow: 1;
+  }
+
+  .shop button {
+    height: 50px;
+  }
+}

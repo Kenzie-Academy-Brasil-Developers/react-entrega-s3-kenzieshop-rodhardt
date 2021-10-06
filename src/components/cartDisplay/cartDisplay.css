@@ -1,0 +1,39 @@
+.cart img {
+  width: 175px;
+}
+
+.cart ul {
+  padding: 0;
+  list-style: none;
+}
+
+.cart li {
+  margin-top: 15px;
+}
+
+.cart button {
+  background-color: rgb(170, 37, 37);
+  color: white;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.cart button:hover {
+  cursor: pointer;
+  background-color: rgb(185, 9, 9);
+}
+
+@media screen and (min-width: 500px) {
+  .cart li {
+    display: flex;
+    align-items: center;
+  }
+
+  .cart .text-info {
+    flex-grow: 1;
+  }
+
+  .cart button {
+    height: 50px;
+  }
+}

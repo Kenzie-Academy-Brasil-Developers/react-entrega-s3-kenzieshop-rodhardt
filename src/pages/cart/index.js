@@ -1,5 +1,11 @@
+import CartDisplay from "../../components/cartDisplay";
+
 const Cart = () => {
-  return <div>Cart</div>;
+  return (
+    <div>
+      <CartDisplay />
+    </div>
+  );
 };
 
 export default Cart;

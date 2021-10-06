@@ -1,0 +1,43 @@
+header {
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 0.5rem;
+}
+
+header h1 {
+  flex-grow: 1;
+  text-align: left;
+  padding-left: 25px;
+}
+
+header h2 {
+  padding-right: 10px;
+}
+
+header h2:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 500px) {
+  header {
+    font-size: 0.8rem;
+  }
+
+  header h2 {
+    padding-right: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  header h1 {
+    padding-left: 80px;
+  }
+
+  header h2 {
+    padding-right: 80px;
+  }
+}
