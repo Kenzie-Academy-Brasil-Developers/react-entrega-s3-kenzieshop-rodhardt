@@ -20,6 +20,12 @@ const CartDisplay = () => {
 
   return (
     <div className="cart">
+      <p>
+        Valor Total: R$
+        {cartList.reduce((acm, cv) => {
+          return acm + cv.price;
+        }, 0)}
+      </p>
       <ul>
         {cartList.map((notebook, index) => (
           <li key={index}>
