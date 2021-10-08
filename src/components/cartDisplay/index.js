@@ -4,6 +4,9 @@ import { rmvProductThunk } from "../../store/modules/shop/thunks";
 
 import "./cartDisplay.css";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const CartDisplay = () => {
   const cartList = useSelector((store) => store.products);
 
@@ -12,6 +15,8 @@ const CartDisplay = () => {
   const handleProducts = (notebook) => {
     dispatch(rmvProductThunk(notebook));
   };
+
+  const notify = () => toast("Produto Removido");
 
   return (
     <div className="cart">
@@ -24,7 +29,15 @@ const CartDisplay = () => {
               <p>Preço: R${notebook.price.toFixed(2)}</p>
             </div>
 
-            <button onClick={() => handleProducts(notebook)}>Remover</button>
+            <button
+              onClick={() => {
+                handleProducts(notebook);
+                notify();
+              }}
+            >
+              Remover
+            </button>
+            <ToastContainer />
           </li>
         ))}
       </ul>

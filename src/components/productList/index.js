@@ -5,6 +5,9 @@ import { useDispatch } from "react-redux";
 
 import "./productList.css";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const ProductList = () => {
   const [products, setProducts] = useState([
     {
@@ -40,6 +43,8 @@ const ProductList = () => {
     dispatch(addProductThunk(notebook));
   };
 
+  const notify = () => toast("Produto Adicionado!");
+
   return (
     <div className="shop">
       <ul>
@@ -50,7 +55,21 @@ const ProductList = () => {
               <h3>Marca: {notebook.name}</h3>
               <p>Preço: R${notebook.price.toFixed(2)}</p>
             </div>
-            <button onClick={() => handleProducts(notebook)}>Adicionar</button>
+            <p className="description">
+              {" "}
+              Description:
+              fewuifhweufheiwfhuiwelfhuiwefhiwehfewuifpefeuwipfhweufheuiwf
+              feufnweipfweui fewfuweifhiwuefhweiofhewui fewfuiweofhweuifhiweu
+            </p>
+            <button
+              onClick={() => {
+                handleProducts(notebook);
+                notify();
+              }}
+            >
+              Adicionar
+            </button>
+            <ToastContainer />
           </li>
         ))}
       </ul>

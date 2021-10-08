@@ -23,6 +23,10 @@
   background-color: rgb(3, 97, 3);
 }
 
+.description {
+  display: none;
+}
+
 @media screen and (min-width: 500px) {
   .shop li {
     display: flex;
@@ -35,5 +39,12 @@
 
   .shop button {
     height: 50px;
+  }
+
+  .description {
+    display: flex;
+    width: 40%;
+    word-break: break-all;
+    padding: 10px;
   }
 }
